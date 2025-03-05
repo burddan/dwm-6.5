@@ -38,6 +38,14 @@ static char *colors[][3] = {
 	[SchemeSel]  = { selfgcolor,  selbgcolor,  selbordercolor  },
 };
 
+static const char *const autostart[] = {
+	/* "alacritty", NULL, */
+	"/home/burddan/.config/dwm-bar/dwm_bar.sh", "&", NULL,
+	"/home/burddan/.config/dwm/scripts/autostart.sh", NULL,
+	"/home/burddan/.config/dwm/scripts/get-rice.sh", NULL,
+	NULL /* terminate */
+};
+
 /* tagging */
 static const char *tags[] = { "1", "2", "3", "4", "5", "6", "7", "8", "9" };
 
