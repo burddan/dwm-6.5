@@ -12,10 +12,10 @@ static const unsigned int maxHTab 			= 200;	/* tab menu height */
 /* appearance */
 static const unsigned int borderpx  = 1;        /* border pixel of windows */
 static const unsigned int snap      = 32;       /* snap pixel */
-static const unsigned int gappih    = 15;       /* horiz inner gap between windows */
-static const unsigned int gappiv    = 15;       /* vert inner gap between windows */
-static const unsigned int gappoh    = 15;       /* horiz outer gap between windows and screen edge */
-static const unsigned int gappov    = 15;       /* vert outer gap between windows and screen edge */
+static const unsigned int gappih    = 8;       /* horiz inner gap between windows */
+static const unsigned int gappiv    = 8;       /* vert inner gap between windows */
+static const unsigned int gappoh    = 12;       /* horiz outer gap between windows and screen edge */
+static const unsigned int gappov    = 12;       /* vert outer gap between windows and screen edge */
 static       int smartgaps          = 0;        /* 1 means no outer gap when there is only one window */
 static const int showbar            = 1;        /* 0 means no bar */
 static const int topbar             = 1;        /* 0 means bottom bar */
@@ -24,8 +24,8 @@ static const unsigned int systrayonleft = 0;           /* 0: systray in the righ
 static const unsigned int systrayspacing = 2;   /* systray spacing */
 static const int systraypinningfailfirst = 1;   /* 1: if pinning fails, display systray on the first monitor, False: display systray on the last monitor*/
 static const int showsystray        = 1;     /* 0 means no systray */
-static const char *fonts[]          = { "FiraCodeNerdFont-Bold:size=10" };
-static const char dmenufont[]       = "FiraCodeNerdFont-Bold:size=10";
+static const char *fonts[]          = { "FiraCodeNerdFont-Bold:size=11" };
+static const char dmenufont[]       = "FiraCodeNerdFont-Bold:size=11";
 static char normbgcolor[]           = "#222222";
 static char normbordercolor[]       = "#444444";
 static char normfgcolor[]           = "#bbbbbb";
@@ -40,7 +40,7 @@ static char *colors[][3] = {
 
 static const char *const autostart[] = {
 	/* "alacritty", NULL, */
-	"/home/burddan/.config/dwm-bar/dwm_bar.sh", "&", NULL,
+	"/home/burddan/.config/dwm-bar/dwm_bar.sh", NULL,
 	"/home/burddan/.config/dwm/scripts/autostart.sh", NULL,
 	"/home/burddan/.config/dwm/scripts/get-rice.sh", NULL,
 	NULL /* terminate */
@@ -108,7 +108,12 @@ static const Key keys[] = {
 	{ MODKEY,	                 XK_Return, spawn,          {.v = termcmd } },
 	{ MODKEY|ControlMask,           XK_q,      cyclelayout,    {.i = -1 } },
 	{ MODKEY,                       XK_q,      cyclelayout,    {.i = +1 } },
-	{ MODKEY,                       XK_F5,     xrdb,           {.v = NULL } },
+	{ Mod1Mask,                       XK_F5,     xrdb,           {.v = NULL } },
+	{ 0,                      XK_Print,       spawn,          SHCMD("flameshot gui") },
+	{ 0|ShiftMask,                      XK_Print,       spawn,          SHCMD("flameshot full") },
+	{ MODKEY,                      XK_s,       spawn,          SHCMD("betterlockscreen -l") },
+	{ MODKEY,                      XK_F5,       spawn,          SHCMD("/home/burddan/.config/dwm/scripts/get-rice.sh") },
+
 	{ MODKEY,                       XK_l,      focusstackvis,  {.i = +1 } },
 	{ MODKEY,                       XK_h,      focusstackvis,  {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
@@ -130,9 +135,8 @@ static const Key keys[] = {
 
 	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
-	{ MODKEY,                       XK_s,      show,           {0} },
-	{ MODKEY|ShiftMask,             XK_s,      showall,        {0} },
-	{ MODKEY,                       XK_h,      hide,           {0} },
+// 	{ MODKEY,                       XK_s,      show,           {0} },
+// 	{ MODKEY|ShiftMask,             XK_s,      showall,        {0} },
 	TAGKEYS(                        XK_1,                      0)
 		TAGKEYS(                        XK_2,                      1)
 	TAGKEYS(                        XK_3,                      2)
