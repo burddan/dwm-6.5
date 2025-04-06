@@ -2,5 +2,6 @@
 wall=$(find /home/burddan/wallpapers -type f -name "*.jpg" -o -name "*.png" | shuf -n 1)
 wal -i $wall
 xwallpaper --zoom $wall
+sleep 1
 xdotool key Alt+F5
 pywalfox update

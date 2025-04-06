@@ -43,6 +43,7 @@ static const char *const autostart[] = {
 	"/home/burddan/.config/dwm-bar/dwm_bar.sh", NULL,
 	"/home/burddan/.config/dwm/scripts/autostart.sh", NULL,
 	"/home/burddan/.config/dwm/scripts/get-rice.sh", NULL,
+	"/home/burddan/.config/dwm/scripts/check-lowbattery.sh", NULL,
 	NULL /* terminate */
 };
 
