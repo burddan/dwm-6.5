@@ -209,7 +209,7 @@ static void arrange(Monitor *m);
 static void arrangemon(Monitor *m);
 static void attach(Client *c);
 static void attachstack(Client *c);
-//static void buttonpress(XEvent *e);
+static void buttonpress(XEvent *e);
 static void checkotherwm(void);
 static void cleanup(void);
 static void cleanupmon(Monitor *mon);
@@ -547,7 +547,7 @@ attachstack(Client *c)
 	c->mon->stack = c;
 }
 
-/*void
+void
 buttonpress(XEvent *e)
 {
 	unsigned int i, x, click;
@@ -592,7 +592,7 @@ buttonpress(XEvent *e)
 		&& CLEANMASK(buttons[i].mask) == CLEANMASK(ev->state))
 			buttons[i].func((click == ClkTagBar || click == ClkWinTitle) && buttons[i].arg.i == 0 ? &arg : &buttons[i].arg);
 }
-*/
+
 
 void
 checkotherwm(void)
