@@ -1,8 +1,5 @@
-dwm 6.5 atualizado
 todo:
-botar patchs que precisam pra 2 config 
 
+buttonpress realiza o precionamento de botao na barra, caso clica o dwm crasha, arrumar isso ai
 
-como dar patch:
-patch -p1 < patches/some_patch.diff
-
+caso tire o buttonpress nao ha como usar o resizemouse do dwm
