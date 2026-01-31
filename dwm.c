@@ -557,6 +557,10 @@ buttonpress(XEvent *e)
 	XButtonPressedEvent *ev = &e->xbutton;
 
 	click = ClkRootWin;
+  // funcao para se clicar na barra nao fazer nada
+  if ((m = wintomon(ev->window)) && ev->window == m->barwin)
+    return;
+
 	if ((m = wintomon(ev->window)) && m != selmon) {
 		unfocus(selmon->sel, 1);
 		selmon = m;
