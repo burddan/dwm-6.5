@@ -130,11 +130,10 @@ static const Key keys[] = {
 	{ MODKEY|ShiftMask,             XK_space,  togglefloating, {0} }, // funcional
 	{ MODKEY,                       XK_0,      view,           {.ui = ~0 } },
 	{ MODKEY|ShiftMask,             XK_0,      tag,            {.ui = ~0 } },
-	{ MODKEY,                       XK_comma,  focusmon,       {.i = -1 } }, // mudar dps quando tiver 2 monitores
-	{ MODKEY,                       XK_period, focusmon,       {.i = +1 } }, // esse tbm
+	{ MODKEY,                       XK_space, focusmon,       {.i = +1 } }, // esse tbm
 	{ Mod1Mask,             		XK_Tab,    altTabStart,	   {.i = 1} },
 
-	{ MODKEY|ShiftMask,             XK_comma,  tagmon,         {.i = -1 } },
+	{ MODKEY,             XK_w,  tagmon,         {.i = -1 } },
 	{ MODKEY|ShiftMask,             XK_period, tagmon,         {.i = +1 } },
 // 	{ MODKEY,                       XK_s,      show,           {0} },
 // 	{ MODKEY|ShiftMask,             XK_s,      showall,        {0} },
