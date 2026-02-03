@@ -115,6 +115,7 @@ static const Key keys[] = {
 	{ MODKEY,                      XK_s,       spawn,          SHCMD("slock") },
 	{ MODKEY,                      XK_F5,       spawn,          SHCMD("/home/burddan/.config/dwm/scripts/get-rice.sh") },
 
+
 	{ MODKEY,                       XK_l,      focusstackvis,  {.i = +1 } },
 	{ MODKEY,                       XK_h,      focusstackvis,  {.i = -1 } },
 	{ MODKEY,                       XK_i,      incnmaster,     {.i = +1 } },
